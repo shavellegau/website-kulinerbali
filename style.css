@@ -1,0 +1,23 @@
+:root {
+    --primary: #006c84;
+    --secondary: #ffccbb;
+    --bg: #c4dfe6;
+    --text: #66a5ad;
+    --two: #ffffff;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: white;
+    min-height: 2000px;
+}

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        .container{
+            margin-top: 0;
+            display: flex;
+        }
+
+        #navBar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 7%;
+        background-color: var(--primary);
+        border-bottom: 1px solid var(--primary);
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 9999;
+        width: 100%;
+      }
+      #navBar .navbar-logo {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--two);
+        font-style: italic;
+      }
+      #navBar .navbar-logo span {
+        color: var(--text);
+      }
+      #navBar .navbar-nav {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+      }
+      #navBar .navbar-nav a {
+        color: var(--two);
+        display: inline-block;
+        font-size: 1.2rem;
+        margin: 0 1rem;
+        text-decoration: none;
+      }
+      #navBar .navbar-nav a:hover {
+        color: var(--text);
+      }
+      #navBar .navbar-nav a::after {
+        content: "";
+        display: block;
+        padding-bottom: 0.5rem;
+        transform: scaleX(0);
+        transition: 0.2s linear;
+      }
+      #navBar .navbar-nav a:hover::after {
+        transform: scaleX(0.5);
+      }
+      #navBar .navbar-extra a {
+        color: var(--two);
+        margin: 0 0.5rem;
+      }
+      #navBar .navbar-extra a:hover {
+        color: var(--text);
+      }
+      #hamburger-menu {
+        display: none;
+        cursor: pointer;
+      }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body{
+            font-family: 'Montserrat', sans-serif;
+        background-color: var(--bg);
+  margin: 0;
+  background-repeat: no-repeat;
+        }
+
+
+        .wrapper .title{
+            text-align: center;
+        }
+
+        .title h4{
+            display: inline-block;
+            padding: 20px;
+            color: black;
+            font-size: 50px;
+            font-weight: 500;
+            letter-spacing: 1.2px;
+            word-spacing: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            text-transform: uppercase;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            word-wrap: break-word;
+        }
+
+        .wrapper .card-container{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .card-container .card {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.1), inset 0 0 0 1000px rgba(67, 52, 109, .6);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card .imb8x, .imb8x img {
+            width: 100%;
+            height: 110%;
+        }
+
+        .card .content {
+            position: absolute;
+            width: 100%;
+            bottom: -160px;
+            height: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid black;
+            border-radius: 15px;
+            transition: bottom 0.5s;
+            transition-delay: 0.65s;
+        }
+
+        .card:hover .content{
+            bottom: 0;
+            transition-delay: 0s;
+        }
+
+        .content .content8x h3{
+            text-transform: uppercase;
+            color: white;
+            letter-spacing: 2px;
+            font-weight: 500;
+            font-size: 18px;
+            text-align: center;
+            margin: 20px 0 15px;
+            line-height: 1.1em;
+            transition: 0.5s;
+            transition-delay: 0.6s;
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        .card:hover .content .content8x h3 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .content .content8x h3 span{
+            font-size: 12px;
+            font-weight: 300;
+            text-transform: initial;
+        }
+
+        .content .sci{
+            position: relative;
+            bottom: 10px;
+            display: flex;
+        }
+
+        .content .sci li{
+            list-style: none;
+            margin: 0 10px;
+            transform: translateY(40px);
+            transition: 0.5s;
+            opacity: 0;
+            transition-delay: calc(0.2s * var(--i));
+        }
+
+        .card:hover .content .sci li{
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .content .sci li a{
+            color: white;
+            font-size: 24px;
+        }
+
+         /*footer */
+         footer {
+            padding: 10px;
+            background-color: var(--primary);
+            text-align: center;
+            margin-top: auto; /* Let footer stick to the bottom */
+            width: 100%; /* Ensure footer spans the full width */
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social a {
+            color: white;
+            margin: 0 5px;
+        }
+
+        .social a:hover {
+            color: var(--bg);
+        }
+
+        footer .social {
+            padding: 1rem 0;
+        }
+
+        footer .social a{
+            color: white;
+            margin: 1rem;
+        }
+
+        footer .link{
+            margin-bottom: 1.3rem;
+        }
+
+        footer .link a{
+            color: white;
+            padding: 0.7rem 1rem;
+        }
+
+        footer .credit {
+            font-size: 0.8rem;
+        }
+
+        footer .credit a{
+            color: var(--bg);
+            font-weight: bold;
+        }
+
+        footer .social a:hover, footer .link a:hover {
+            color: var(--bg);
+        }
+
+    </style>
+</head>
+<body>
+
+    <canvas id="canvas" width="1400" height="600"></canvas>
+
+    <div class="container">
+
+        <nav id="navBar">
+            <a href="#" class="navbar-logo">Kuliner<span>Bali</span>.</a>
+        
+            <div class="navbar-nav">
+                <a href="index.html">Home</a>
+                <a href="kuliner.html">Kuliner</a>
+                <a href="belumTau.html">Recipe</a>
+                <a href="aboutUs.html">About Us</a>
+            </div>
+        
+            <div class="navbar-extra">
+                <a href="#" id="search"><i data-feather="search"></i></a>
+                <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+            </div>
+        </nav>
+        <canvas id="canvas" width="1400" height="600"></canvas>
+    </div>
+
+    <div class="wrapper">
+        <div class="title">
+            <h4>Our Team Section</h4>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div class="imb8x">
+                    <img src="sakura.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="content8x">
+                        <h3>Sakura Nadira<br><span>Anggota 1</span></h3>
+                    </div>
+                    <ul class="sci">
+                        <li style="--i: 1">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li style="--i: 2">
+                            <a href="#" class="github"><i data-feather="github"></i></a>
+                        </li>
+                        <li style="--i: 3">
+                            <a href="#" class="linkedin"><i data-feather="linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="imb8x">
+                    <img src="shavelle.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="content8x">
+                        <h3>Shavelle Gautami J<br><span>Anggota 2</span></h3>
+                    </div>
+                    <ul class="sci">
+                        <li style="--i: 1">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li style="--i: 2">
+                            <a href="#" class="github"><i data-feather="github"></i></a>
+                        </li>
+                        <li style="--i: 3">
+                            <a href="#" class="linkedin"><i data-feather="linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="imb8x">
+                    <img src="frissa.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="content8x">
+                        <h3>Frissa Budiansyah<br><span>Anggota 3</span></h3>
+                    </div>
+                    <ul class="sci">
+                        <li style="--i: 1">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li style="--i: 2">
+                            <a href="#" class="github"><i data-feather="github"></i></a>
+                        </li>
+                        <li style="--i: 3">
+                            <a href="#" class="linkedin"><i data-feather="linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="imb8x">
+                    <img src="tiffany.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="content8x">
+                        <h3>Tiffany Titania Sunarga<br><span>Anggota 4</span></h3>
+                    </div>
+                    <ul class="sci">
+                        <li style="--i: 1">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li style="--i: 2">
+                            <a href="#" class="github"><i data-feather="github"></i></a>
+                        </li>
+                        <li style="--i: 3">
+                            <a href="#" class="linkedin"><i data-feather="linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social">
+            <a href="#"><i data-feather="instagram"></i></a>
+            <a href="#"><i data-feather="linkedin"></i></a>
+            <a href="#"><i data-feather="mail"></i></a>
+        </div>
+        <div class="link">
+            <a href="index.html">Home</a>
+            <a href="kuliner.html">Kuliner</a>
+            <a href="belumTau.html">KOSONG</a>
+            <a href="aboutUs.html">About Us</a>
+        </div>
+        <div class="credit">
+            <p>Created by <a href="">Shavelle, Sakura, Tiffany, Frissa</a> . | &copy; 2024.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var username = localStorage.getItem("username");
+            if (username) {
+                document.getElementById("userName").innerText = username;
+            }
+        });
+    </script>
+    <script>
+         document.addEventListener("DOMContentLoaded", function() {
+            const navbarNav = document.querySelector('.navbar-nav');
+            const hamburgerMenu = document.querySelector('#hamburger-menu');
+    
+            hamburgerMenu.onclick = () => {
+                navbarNav.classList.toggle('active');
+            };
+    
+            const hamburger = document.querySelector('#hamburger-menu');
+            document.addEventListener('click', function(e) {
+                if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
+                    navbarNav.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    <script>
+        feather.replace();
+    </script>
+    <script>
+        var canvas = document.getElementById("canvas");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Initialize the GL context
+var gl = canvas.getContext('webgl');
+if(!gl){
+  console.error("Unable to initialize WebGL.");
+}
+
+//Time
+var time = 0.0;
+
+//************** Shader sources **************
+
+var vertexSource = `
+attribute vec2 position;
+void main() {
+	gl_Position = vec4(position, 0.0, 1.0);
+}
+`;
+
+var fragmentSource = `
+precision highp float;
+
+uniform float width;
+uniform float height;
+vec2 resolution = vec2(width, height);
+
+uniform float time;
+
+#define POINT_COUNT 8
+
+vec2 points[POINT_COUNT];
+const float speed = -0.5;
+const float len = 0.25;
+float intensity = 1.3;
+float radius = 0.008;
+
+//https://www.shadertoy.com/view/MlKcDD
+//Signed distance to a quadratic bezier
+float sdBezier(vec2 pos, vec2 A, vec2 B, vec2 C){    
+	vec2 a = B - A;
+	vec2 b = A - 2.0*B + C;
+	vec2 c = a * 2.0;
+	vec2 d = A - pos;
+
+	float kk = 1.0 / dot(b,b);
+	float kx = kk * dot(a,b);
+	float ky = kk * (2.0*dot(a,a)+dot(d,b)) / 3.0;
+	float kz = kk * dot(d,a);      
+
+	float res = 0.0;
+
+	float p = ky - kx*kx;
+	float p3 = p*p*p;
+	float q = kx*(2.0*kx*kx - 3.0*ky) + kz;
+	float h = q*q + 4.0*p3;
+
+	if(h >= 0.0){ 
+		h = sqrt(h);
+		vec2 x = (vec2(h, -h) - q) / 2.0;
+		vec2 uv = sign(x)*pow(abs(x), vec2(1.0/3.0));
+		float t = uv.x + uv.y - kx;
+		t = clamp( t, 0.0, 1.0 );
+
+		// 1 root
+		vec2 qos = d + (c + b*t)*t;
+		res = length(qos);
+	}else{
+		float z = sqrt(-p);
+		float v = acos( q/(p*z*2.0) ) / 3.0;
+		float m = cos(v);
+		float n = sin(v)*1.732050808;
+		vec3 t = vec3(m + m, -n - m, n - m) * z - kx;
+		t = clamp( t, 0.0, 1.0 );
+
+		// 3 roots
+		vec2 qos = d + (c + b*t.x)*t.x;
+		float dis = dot(qos,qos);
+        
+		res = dis;
+
+		qos = d + (c + b*t.y)*t.y;
+		dis = dot(qos,qos);
+		res = min(res,dis);
+		
+		qos = d + (c + b*t.z)*t.z;
+		dis = dot(qos,qos);
+		res = min(res,dis);
+
+		res = sqrt( res );
+	}
+    
+	return res;
+}
+
+
+//http://mathworld.wolfram.com/HeartCurve.html
+vec2 getHeartPosition(float t){
+	return vec2(16.0 * sin(t) * sin(t) * sin(t),
+							-(13.0 * cos(t) - 5.0 * cos(2.0*t)
+							- 2.0 * cos(3.0*t) - cos(4.0*t)));
+}
+
+//https://www.shadertoy.com/view/3s3GDn
+float getGlow(float dist, float radius, float intensity){
+	return pow(radius/dist, intensity);
+}
+
+float getSegment(float t, vec2 pos, float offset, float scale){
+	for(int i = 0; i < POINT_COUNT; i++){
+		points[i] = getHeartPosition(offset + float(i)*len + fract(speed * t) * 6.28);
+	}
+    
+	vec2 c = (points[0] + points[1]) / 2.0;
+	vec2 c_prev;
+	float dist = 10000.0;
+    
+	for(int i = 0; i < POINT_COUNT-1; i++){
+		//https://tinyurl.com/y2htbwkm
+		c_prev = c;
+		c = (points[i] + points[i+1]) / 2.0;
+		dist = min(dist, sdBezier(pos, scale * c_prev, scale * points[i], scale * c));
+	}
+	return max(0.0, dist);
+}
+
+void main(){
+	vec2 uv = gl_FragCoord.xy/resolution.xy;
+	float widthHeightRatio = resolution.x/resolution.y;
+	vec2 centre = vec2(0.5, 0.5);
+	vec2 pos = centre - uv;
+	pos.y /= widthHeightRatio;
+	//Shift upwards to centre heart
+	pos.y += 0.02;
+	float scale = 0.000015 * height;
+	
+	float t = time;
+    
+	//Get first segment
+  float dist = getSegment(t, pos, 0.0, scale);
+  float glow = getGlow(dist, radius, intensity);
+  
+  vec3 col = vec3(0.0);
+
+	//White core
+  col += 10.0*vec3(smoothstep(0.003, 0.001, dist));
+  //Pink glow
+  col += glow * vec3(1.0,0.05,0.3);
+  
+  //Get second segment
+  dist = getSegment(t, pos, 3.4, scale);
+  glow = getGlow(dist, radius, intensity);
+  
+  //White core
+  col += 10.0*vec3(smoothstep(0.003, 0.001, dist));
+  //Blue glow
+  col += glow * vec3(0.1,0.4,1.0);
+        
+	//Tone mapping
+	col = 1.0 - exp(-col);
+
+	//Gamma
+	col = pow(col, vec3(0.4545));
+
+	//Output to screen
+ 	gl_FragColor = vec4(col,1.0);
+}
+`;
+
+//************** Utility functions **************
+
+window.addEventListener('resize', onWindowResize, false);
+
+function onWindowResize(){
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+	gl.viewport(0, 0, canvas.width, canvas.height);
+  gl.uniform1f(widthHandle, window.innerWidth);
+  gl.uniform1f(heightHandle, window.innerHeight);
+}
+
+
+//Compile shader and combine with source
+function compileShader(shaderSource, shaderType){
+  var shader = gl.createShader(shaderType);
+  gl.shaderSource(shader, shaderSource);
+  gl.compileShader(shader);
+  if(!gl.getShaderParameter(shader, gl.COMPILE_STATUS)){
+  	throw "Shader compile failed with: " + gl.getShaderInfoLog(shader);
+  }
+  return shader;
+}
+
+//From https://codepen.io/jlfwong/pen/GqmroZ
+//Utility to complain loudly if we fail to find the attribute/uniform
+function getAttribLocation(program, name) {
+  var attributeLocation = gl.getAttribLocation(program, name);
+  if (attributeLocation === -1) {
+  	throw 'Cannot find attribute ' + name + '.';
+  }
+  return attributeLocation;
+}
+
+function getUniformLocation(program, name) {
+  var attributeLocation = gl.getUniformLocation(program, name);
+  if (attributeLocation === -1) {
+  	throw 'Cannot find uniform ' + name + '.';
+  }
+  return attributeLocation;
+}
+
+//************** Create shaders **************
+
+//Create vertex and fragment shaders
+var vertexShader = compileShader(vertexSource, gl.VERTEX_SHADER);
+var fragmentShader = compileShader(fragmentSource, gl.FRAGMENT_SHADER);
+
+//Create shader programs
+var program = gl.createProgram();
+gl.attachShader(program, vertexShader);
+gl.attachShader(program, fragmentShader);
+gl.linkProgram(program);
+
+gl.useProgram(program);
+
+//Set up rectangle covering entire canvas 
+var vertexData = new Float32Array([
+  -1.0,  1.0, 	// top left
+  -1.0, -1.0, 	// bottom left
+   1.0,  1.0, 	// top right
+   1.0, -1.0, 	// bottom right
+]);
+
+//Create vertex buffer
+var vertexDataBuffer = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, vertexDataBuffer);
+gl.bufferData(gl.ARRAY_BUFFER, vertexData, gl.STATIC_DRAW);
+
+// Layout of our data in the vertex buffer
+var positionHandle = getAttribLocation(program, 'position');
+
+gl.enableVertexAttribArray(positionHandle);
+gl.vertexAttribPointer(positionHandle,
+  2, 				// position is a vec2 (2 values per component)
+  gl.FLOAT, // each component is a float
+  false, 		// don't normalize values
+  2 * 4, 		// two 4 byte float components per vertex (32 bit float is 4 bytes)
+  0 				// how many bytes inside the buffer to start from
+  );
+
+//Set uniform handle
+var timeHandle = getUniformLocation(program, 'time');
+var widthHandle = getUniformLocation(program, 'width');
+var heightHandle = getUniformLocation(program, 'height');
+
+gl.uniform1f(widthHandle, window.innerWidth);
+gl.uniform1f(heightHandle, window.innerHeight);
+
+var lastFrame = Date.now();
+var thisFrame;
+
+function draw(){
+	
+  //Update time
+	thisFrame = Date.now();
+  time += (thisFrame - lastFrame)/1000;	
+	lastFrame = thisFrame;
+
+	//Send uniforms to program
+  gl.uniform1f(timeHandle, time);
+  //Draw a triangle strip connecting vertices 0-4
+  gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+    </script>
+</body>
+</html>

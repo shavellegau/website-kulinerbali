@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bali</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="script.js"></script>
+    
+    <style>
+        body {
+            overflow: scroll;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bg-video.active {
+            clip-path: circle(150% at 0 50%);
+            transition: 2s ease;
+            transition-property: clip-path;
+        }
+
+        .destinasi {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+            color: white;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); 
+            border-radius: 10px;
+        }
+        .info {
+            flex: 1;
+            margin-right: 20px; 
+        }
+
+        .info h3 {
+            font-size: 4em;
+            font-weight: 800;
+        }
+
+        .info h5 {
+            font-size: x-large;
+        }
+        
+        .info p {
+           
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 480px) {
+            .info h3 {
+                font-size: 1.5em;
+            }
+
+            .info p {
+                font-size: 1em;
+            }
+        }
+
+        footer {
+            padding: 10px;
+            width: 100%;
+            background-color: var(--primary);
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            z-index: 2;
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social a {
+            color: white;
+            margin: 0 5px;
+        }
+
+        .social a:hover {
+            color: var(--bg);
+        }
+
+        .slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 550px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .slide .slide-btn {
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .slide .slide-btn:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        .gambar {
+            margin-left: 20px; 
+        }
+
+        .gambar img {
+            width: 500px; 
+            height: auto; 
+        }
+
+        .button {
+            background-color: rgb(100, 29, 29);
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+            text-decoration: none; /* Remove underline from anchor tag */
+        }
+
+        .button:hover {
+            background-color: black;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <section class="destinasi">
+            <div class="info">
+                <h3>Nasi Tepeng</h3>
+                    <p>Bahan-Bahan :</p>
+                    <h5>350 gram beras (cuci bersih),
+                        400 ml air,
+                        200 ml santan,
+                        4 lembar daun salam,
+                        2 batang serai,
+                        1/4 sdt kunyit bubuk,
+                        1 sdt garam,
+                        150 gram nangka muda (potong-potong),
+                        1 buah terong ungu (potong-potong),
+                        4 siung bawang merah,
+                        2 siung bawang putih,
+                        1 sdt ketumbar bubuk,
+                        1 bungkus Kobe Bumbu Nasi Goreng.
+                        </h5>
+            </div>
+            <div class="gambar">
+                <img src="nasi tepeng.jpeg" alt="Gambar Bahan">
+            </div>
+        </section>
+
+        <video id="bg-video" class="bg-video" poster="background_bali.jpg" autoplay muted loop>
+            <source src="video makanan.mp4" type="video/mp4"/>
+        </video>
+
+        <div class="slide">
+            <a href="tepeng1.html" class="slide-btn active"></a>
+            <a href="tepeng2.html" class="slide-btn"></a>
+        </div>
+
+    </header>
+
+    <footer>
+        <div class="social">
+            <a href="#"><i data-feather="instagram"></i></a>
+            <a href="#"><i data-feather="linkedin"></i></a>
+            <a href="#"><i data-feather="mail"></i></a>
+        </div>
+        <div class="link">
+            <a href="index.html">Home</a>
+            <a href="kuliner.html">Kuliner</a>
+            <a href="belumTau.html">Recipe</a>
+            <a href="aboutUs.html">About Us</a>
+        </div>
+        <div class="credit">
+            <p>Created by <a href="">Shavelle, Sakura, Tiffany, Frissa</a> . | &copy; 2024.</p>
+        </div>  
+        <div class="back-btn">
+            <a href="belumTau.html" class="button">Back to Recipe</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var username = localStorage.getItem("username");
+            if (username) {
+                document.getElementById("userName").innerText = username;
+            }
+
+            const btns = document.querySelectorAll(".slide-btn");
+            btns.forEach((btn) => {
+                btn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const href = btn.getAttribute("href");
+                    window.location.href = href;
+                });
+            });
+        });
+
+        feather.replace();
+    </script>
+</body>
+</html>
